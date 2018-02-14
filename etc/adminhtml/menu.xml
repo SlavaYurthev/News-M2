@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * News
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<update id="SY::core"
+			 title="Slava Yurthev"
+			 module="Magento_Backend"
+			 sortOrder="9999"
+			 resource="Magento_Backend::content" />
+		<update id="SY::developer"
+			 title="Developer"
+			 module="Magento_Backend" 
+			 sortOrder="1000"
+			 parent="SY::core"
+			 resource="Magento_Backend::content" />
+		<update id="SY::developer_developer"
+			 title="Developer"
+			 module="Magento_Backend" 
+			 sortOrder="1000"
+			 parent="SY::developer"
+			 action="adminhtml/system_config/edit/section/sy_developer/"
+			 resource="Magento_Backend::content" />
+		<add id="SY_News::section"
+			 title="News"
+			 module="SY_News" 
+			 sortOrder="0"
+			 parent="SY::core"
+			 resource="SY_News::section" />
+		<add id="SY_News::items"
+			 title="Items"
+			 module="SY_News" 
+			 sortOrder="0"
+			 parent="SY_News::section"
+			 action="sy_news/items"
+			 resource="SY_News::items" />
+		<add id="SY_News::configuration"
+			 title="Configuration"
+			 module="SY_News" 
+			 sortOrder="10000"
+			 parent="SY_News::section"
+			 action="adminhtml/system_config/edit/section/sy_news/"
+			 resource="SY_News::configuration" />
+	</menu>
+</config>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * News
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+		<title>Item</title>
+		<css src="SY_News::css/styles.css" />
+	</head>
+	<body>
+		<referenceContainer name="content">
+			<block class="SY\News\Block\Listing\View" template="SY_News::listing/view.phtml" />
+		</referenceContainer>
+		<referenceBlock name="page.main.title" remove="true" />
+	</body>
+</page>

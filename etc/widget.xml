@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * News
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="sy_latest_news_widget" class="SY\News\Block\Widget\LatestNews" placeholder_image="SY_News::images/widget/latest-news.png">
+		<label translate="true">Latest News</label>
+		<description></description>
+		<parameters>
+			<parameter name="Limit" xsi:type="select" source_model="SY\News\Model\Config\Source\Limit" visible="true" required="true" sort_order="1">
+				<label translate="true">limit</label>
+			</parameter>
+		</parameters>
+	</widget>
+</widgets>

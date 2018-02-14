@@ -1,0 +1,10 @@
+<?php $collection = $this->getCollection(); ?>
+<?php if($collection->count() > 0): ?>
+	<ul>
+		<?php foreach($collection as $item): ?>
+			<li>
+				<a href="<?php echo $item->getUrl(); ?>"><?php echo $item->getTitle(); ?></a>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+<?php endif; ?>

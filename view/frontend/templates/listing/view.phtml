@@ -1,0 +1,24 @@
+<?php
+/**
+ * News
+ * 
+ * @author Slava Yurthev
+ */
+?>
+<?php $item = $this->getItem(); ?>
+<article>
+	<div class="item-title">
+		<h1><?php echo $item->getTitle(); ?></h1>
+	</div>
+	<div class="item-datetime">
+		<?php echo date("d F Y", strtotime($item->getCreatedAt())); ?>
+	</div>
+	<?php if($item->hasImage()): ?>
+		<div class="item-image">
+			<img src="<?php echo $item->getImageUrl(); ?>">
+		</div>
+	<?php endif; ?>
+	<div class="item-text">
+		<?php echo $this->format($item->getText()); ?>
+	</div>
+</article>

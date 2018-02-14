@@ -1,0 +1,65 @@
+/**
+ * News
+ * 
+ * @author Slava Yurthev
+ */
+.toolbar-bottom {
+	padding: 0 50px;
+}
+.toolbar-bottom div::after {
+	content: "";
+	display: block;
+	clear: both;
+	width: 100%;
+}
+.toolbar-bottom .pager .pages {
+	float: right;
+}
+article,
+.list {
+	margin: 50px 0;
+	padding: 0 50px;
+}
+.list .list-item {}
+.list .list-item+.list-item {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid rgb(135, 134, 134);
+}
+.list .list-item::after {
+	content: "";
+	display: block;
+	clear: both;
+	width: 100%;
+}
+.list .list-item .list-item-image,
+.list .list-item .list-item-details {
+	width: 49%;
+}
+.list .list-item .list-item-image {
+	float: left;
+}
+.list .list-item .list-item-details {
+	float: right;
+}
+article .item-title,
+.list .list-item .list-item-details h2 {
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(135, 134, 134, 0.5);
+}
+article .item-datetime,
+.list .list-item .list-item-details .datetime {
+	margin-bottom: 10px;
+	color: rgba(135, 134, 134, 0.5);
+	border-bottom: 1px solid rgba(135, 134, 134, 0.5);
+	padding-bottom: 10px;
+}
+.list .list-item .list-item-details .actions .btn {
+	width: 100%;
+}
+article .item-image {
+	text-align: center;
+}
+article .item-text {
+	margin-top: 20px;
+}

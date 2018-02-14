@@ -1,0 +1,34 @@
+<?php
+/**
+ * News
+ * 
+ * @author Slava Yurthev
+ */
+?>
+<?php $collection = $this->getCollection(); ?>
+<?php if($collection->count() > 0): ?>
+	<div class="list">
+		<?php foreach($collection as $item): ?>
+			<div class="list-item">
+				<div class="list-item-image">
+					<img src="<?php echo $item->getImageUrl(); ?>">
+				</div>
+				<div class="list-item-details">
+					<h2><?php echo $item->getTitle(); ?></h2>
+					<div class="datetime">
+						<?php echo date("d F Y", strtotime($item->getCreatedAt())); ?>
+					</div>
+					<div class="short-description">
+						<?php echo $this->format($item->getDescription()); ?>
+					</div>
+					<div class="actions">
+						<a href="<?php echo $item->getUrl(); ?>" class="btn"><?php echo __('Read More'); ?></a>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+	</div>
+	<div class="toolbar-bottom"><?php echo $this->getPagerHtml(); ?></div>
+<?php else: ?>
+	<p><?php echo __('Your search returned no results.'); ?></p>
+<?php endif; ?>

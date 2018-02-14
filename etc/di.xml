@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * News
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="SY\News\Api\Data\ItemInterface" type="SY\News\Model\Item" />
+	<virtualType name="SYNewsItemsFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+		<arguments>
+			<argument name="appliers" xsi:type="array">
+				<item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+				<item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+			</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="SYNewsItemsDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+		<arguments>
+			<argument name="collection" xsi:type="object" shared="false">SY\News\Model\ResourceModel\Item\Collection</argument>
+			<argument name="filterPool" xsi:type="object" shared="false">SYNewsItemsFilterPool</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="SY\News\Model\ResourceModel\Item\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">sy_news_item</argument>
+			<argument name="resourceModel" xsi:type="string">SY\News\Model\ResourceModel\Item</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="sy_news_items_data_source" xsi:type="string">SY\News\Model\ResourceModel\Item\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>
