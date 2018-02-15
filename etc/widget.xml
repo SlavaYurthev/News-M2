@@ -11,8 +11,8 @@
 		<label translate="true">Latest News</label>
 		<description></description>
 		<parameters>
-			<parameter name="Limit" xsi:type="select" source_model="SY\News\Model\Config\Source\Limit" visible="true" required="true" sort_order="1">
-				<label translate="true">limit</label>
+			<parameter name="limit" xsi:type="select" source_model="SY\News\Model\Config\Source\Limit" visible="true" required="true" sort_order="1">
+				<label translate="true">Limit</label>
 			</parameter>
 		</parameters>
 	</widget>
